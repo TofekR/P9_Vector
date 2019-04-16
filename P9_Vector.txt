@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main(int argc, char **argv)
+{
+    vector<float>nil_mhs;
+    vector<float>::iterator it;
+    vector<float>::iterator x;
+    float nilai;
+    int banyak_dt;
+    float cari;
+    
+    cout<<"Input Banyak data = ";
+    cin>>banyak_dt;
+    
+    for (int i=0;i<banyak_dt;i++)
+    {
+        cout<<"Input Nilai ke " <<i<<"=";
+        cin>>nilai;
+
+        nil_mhs.push_back(nilai);
+    }
+    
+    for(float data:nil_mhs)
+    {
+        cout<< data;
+    }
+    
+    //Data Nilai Tertinggi
+    it=max_element(nil_mhs.begin(),nil_mhs.end());
+    cout<<"\n\n";
+    cout<<"Nilai maksimal adalah = ";
+    cout<<*it;
+    
+    cout<<"\n";
+    //Data terurut
+    sort(nil_mhs.begin(),nil_mhs.end());
+    cout<<"Data terurut = ";
+    for(int x : nil_mhs)
+        
+    {
+        cout<< x ;
+    }
+    
+    cout<<"\n\n";
+    cout<<"Input Data yang di cari = "; cin>>cari;
+    
+    x=find(nil_mhs.begin(),nil_mhs.end(),cari);
+    cout<<distance(nil_mhs.begin(),x);
+    
+    cout<<"\n\n";
+	return 0;
+}
