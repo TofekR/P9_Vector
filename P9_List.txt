@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <iostream>
+#include <list>
+#include <algorithm>
+using namespace std;
+
+int main(int argc, char **argv)
+{
+    list<float>nil_mhs;
+    float nilai;
+    int banyak_dt,ganti,hapus;
+    
+    cout<<"Input Banyak data = ";
+    cin>>banyak_dt;
+   
+    for (int i=0;i<banyak_dt;i++)
+    {
+        cout<<"Input Nilai ke " <<i<<"=";
+        cin>>nilai;
+
+        nil_mhs.push_back(nilai);
+    }
+     cout<<"Nilai = ";
+    for(float data:nil_mhs)
+    {
+        cout<< data<<" ";
+    }
+    cout<<"\n";
+    cout<<"Replace Nilai = ";
+    replace(nil_mhs.begin(),nil_mhs.end(),6,8);
+    for(float data : nil_mhs)
+    {
+        cout<<data<<" ";
+    }
+    cout<<"\n";
+    cout<<"Delete Nilai = ";
+    nil_mhs.erase(remove(nil_mhs.begin(),nil_mhs.end(),6),nil_mhs.end());
+    for(float data : nil_mhs)
+    {
+        cout<<data<<" ";
+    }
+    cout<<"\n";
+    cout<<"Balik Nilai = ";
+    reverse(nil_mhs.begin(),nil_mhs.end());
+    for(float data : nil_mhs)
+    {
+        cout<<data<<" ";
+    }
+    cout<<"\n\n";
+	return 0;
+}
+
+
+
+
